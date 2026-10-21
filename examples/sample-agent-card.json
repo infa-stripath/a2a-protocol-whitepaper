@@ -1,0 +1,32 @@
+{
+  "name": "Support Ticket Triage Agent (Sample)",
+  "description": "A fictional example agent that classifies incoming support tickets and returns a structured triage summary. For illustration only.",
+  "version": "0.1.0",
+  "supportedInterfaces": [
+    {
+      "protocolBinding": "JSONRPC",
+      "url": "https://agents.example.com/triage/a2a",
+      "protocolVersion": "1.0"
+    }
+  ],
+  "capabilities": {
+    "streaming": true,
+    "pushNotifications": false
+  },
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["application/json"],
+  "skills": [
+    {
+      "id": "triage-ticket",
+      "name": "Triage support ticket",
+      "description": "Reads a customer issue and returns a category, a severity estimate and a short summary for a human representative.",
+      "tags": ["support", "triage", "classification"],
+      "examples": [
+        "Customer reports login failures since this morning",
+        "Classify this ticket and suggest severity"
+      ],
+      "inputModes": ["text/plain"],
+      "outputModes": ["application/json"]
+    }
+  ]
+}
